@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char name[20],num[20],maxname[20],minname[20],maxnum[20],minnum[20];
+	int score,i,n,min = -1,max = 101;
+
+	
+	scanf("%d",&n);
+	for(i = 0;i < n; i++){
+		scanf("%s %s %d" , name, num ,&score);
+		if(score > min){
+			min = score;
+			strcpy(minname,name);
+      		strcpy(minnum,num);
+		}
+		if(score < max){
+			max = score;
+			strcpy(maxname,name);
+			strcpy(maxnum,num);
+		}														
+	}
+	printf("%s,%s\n",maxname,minname);
+	printf("%s,%s\n",maxnum,minnum);																					
+	
+	
+	return 0;
+}
